@@ -1,0 +1,20 @@
+{% extends 'mysite/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+    <div class="container">
+        <div style="text-align: center;">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4">Hi Moeid!</h1>
+                    <p class="lead">Want to get pass this Gate?</p>
+                    <p class="lead">Then take the following quiz to know the CHARGE! Wrong answer will penalty with CHARGE!</p>
+                    <button type="button" class="button button2" onClick="window.location.href='chuck'">Participate!</button>
+                </div>
+            </div>
+        </div>
+         <img src="{% static 'mysite/images/wed.jpg' %}" style="width:1110px;height:500px;">
+    </div>
+
+{% endblock %}

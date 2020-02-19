@@ -1,0 +1,73 @@
+{% extends 'mysite/base.html' %}
+{% load staticfiles %}
+{% load static %}
+
+{% block content %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Gate Pass to Marry Tarin</title>
+    </head>
+
+    <body>
+    <div class="container" style="margin-top: 0px" >
+        <div class="jumbotron jumbotron-fluid" align="center">
+            <div class="container">
+                <h4 class="display-4">Answer the following questions sincerely!</h4>
+                <br>
+                <button type="button" class="btn btn-outline-danger">BE CAREFUL!</button>
+            </div>
+        </div>
+        <form class="lead" action="{% url 'chuck' %}" method="post">
+            {% csrf_token %}
+            <br>
+            <hr>
+            <br>
+            <div class="custom-control custom-radio" >
+                <input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked" required>
+                <label class="custom-control-label" for="customControlValidation2" >I am Moeid!</label>
+            </div>
+
+            <div class="custom-control custom-radio mb-3">
+                <input type="radio" class="custom-control-input" id="customControlValidation3" name="radio-stacked" required>
+                <label class="custom-control-label" for="customControlValidation3">I am not Moeid!</label>
+                <div class="invalid-feedback">More example invalid feedback text</div>
+            </div>
+            <br>
+            <hr>
+            <br>
+
+            <div class="form-group" class="lead">
+                <p class="lead">Choose the right answer!</p>
+                <select class="custom-select" required>
+                    <option value="">What is the birth Date of Tarin?</option>
+                    <option value="1">28th March</option>
+                    <option value="2">28th April</option>
+                    <option value="3">28th February</option>
+                    <option value="4">28th August</option>
+                </select>
+                <div class="invalid-feedback">Example invalid custom select feedback</div>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div>
+                <p class="lead">Write down the FULL name of Tarin correctly!</p>
+                <label class="sr-only" for="inlineFormInputName">Name</label>
+                <input type="text" class="form-control" id="inlineFormInputName" placeholder="Moeid Bro">
+            </div>
+            <div class="lead">
+                <div class="container" align="center" style="margin-top: 30px">
+                    <button type="button" class="button button2" onClick="window.location.href='/result'">Submit!</button>
+                </div>
+            </div>
+        </form>
+
+
+
+
+    </body>
+    </html>
+    </div>
+{% endblock %}
